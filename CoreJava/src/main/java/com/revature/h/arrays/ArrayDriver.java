@@ -1,4 +1,4 @@
-package com.reavture.g.arrays;
+package com.revature.h.arrays;
 
 import java.util.Arrays;
 
@@ -8,10 +8,16 @@ public class ArrayDriver {
 	public static void main(String[] args) {
 		int[] nums = new int[4];
 
+		System.out.println(Arrays.toString(nums));
 		nums[1] = 32;
+		System.out.println(Arrays.toString(nums));
 		nums[0] = 12;
+		System.out.println(Arrays.toString(nums));
 		nums[2] = 42;
+		System.out.println(Arrays.toString(nums));
 		nums[3] = 1002;
+		System.out.println(Arrays.toString(nums));
+		
 
 		for (int i = 0; i < nums.length; i++) {
 			System.out.println("index: " + i + " element: " + nums[i]);

@@ -1,5 +1,11 @@
 package com.revature.e.objects;
 
+/**
+ * This is the pencil class used to model an actual pencil
+ * 
+ * @author btkru
+ *
+ */
 public class Pencil {
 	// the first 2 fields should also be private but i left just for demo sake
 	boolean isMechanical;
@@ -30,10 +36,18 @@ public class Pencil {
 		return isMechanical;
 	}
 
+	/**
+	 * Used to set whether the pencil is mechanical or not
+	 * @param isMechanical
+	 */
 	public void setMechanical(boolean isMechanical) {
 		this.isMechanical = isMechanical;
 	}
 
+	/**
+	 * 
+	 * @return the current material the pencil is made of
+	 */
 	public String getMaterial() {
 		return material;
 	}

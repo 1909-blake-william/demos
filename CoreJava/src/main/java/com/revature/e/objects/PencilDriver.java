@@ -9,6 +9,7 @@ public class PencilDriver {
 		p.isMechanical = false;
 		p.setSharp(true);
 		
+		
 		// material is not properly encapsulated because we are interracting with it directly
 		p.material = "Wood";
 		
