@@ -1,20 +1,20 @@
 package com.revature.models;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class PokemonType {
 
 	private int id;
 	private String name;
-	private PokemonType[] weaknesses;
-	private PokemonType[] resistances;
+	private List<PokemonType> weaknesses;
+	private List<PokemonType> resistances;
 
 	public PokemonType() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public PokemonType(int id, String name, PokemonType[] weaknesses, PokemonType[] resistances) {
+	public PokemonType(int id, String name, List<PokemonType> weaknesses, List<PokemonType> resistances) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,19 +38,19 @@ public class PokemonType {
 		this.name = name;
 	}
 
-	public PokemonType[] getWeaknesses() {
+	public List<PokemonType> getWeaknesses() {
 		return weaknesses;
 	}
 
-	public void setWeaknesses(PokemonType[] weaknesses) {
+	public void setWeaknesses(List<PokemonType> weaknesses) {
 		this.weaknesses = weaknesses;
 	}
 
-	public PokemonType[] getResistances() {
+	public List<PokemonType> getResistances() {
 		return resistances;
 	}
 
-	public void setResistances(PokemonType[] resistances) {
+	public void setResistances(List<PokemonType> resistances) {
 		this.resistances = resistances;
 	}
 
@@ -60,8 +60,8 @@ public class PokemonType {
 		int result = 1;
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + Arrays.hashCode(resistances);
-		result = prime * result + Arrays.hashCode(weaknesses);
+		result = prime * result + ((resistances == null) ? 0 : resistances.hashCode());
+		result = prime * result + ((weaknesses == null) ? 0 : weaknesses.hashCode());
 		return result;
 	}
 
@@ -81,16 +81,22 @@ public class PokemonType {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (!Arrays.equals(resistances, other.resistances))
+		if (resistances == null) {
+			if (other.resistances != null)
+				return false;
+		} else if (!resistances.equals(other.resistances))
 			return false;
-		if (!Arrays.equals(weaknesses, other.weaknesses))
+		if (weaknesses == null) {
+			if (other.weaknesses != null)
+				return false;
+		} else if (!weaknesses.equals(other.weaknesses))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Type [id=" + id + ", name=" + name + "]";
+		return "PokemonType [id=" + id + ", name=" + name + "]";
 	}
 
 }

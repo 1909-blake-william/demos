@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class Pokemon {
 	private int id;
@@ -8,14 +8,14 @@ public class Pokemon {
 	private int level;
 	private int healthPoints;
 	private PokemonType type;
-	private PokemonMove[] moves;
+	private List<PokemonMove> moves;
 
 	public Pokemon() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pokemon(int id, String name, int level, int healthPoints, PokemonType type, PokemonMove[] moves) {
+	public Pokemon(int id, String name, int level, int healthPoints, PokemonType type, List<PokemonMove> moves) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -65,11 +65,11 @@ public class Pokemon {
 		this.type = type;
 	}
 
-	public PokemonMove[] getMoves() {
+	public List<PokemonMove> getMoves() {
 		return moves;
 	}
 
-	public void setMoves(PokemonMove[] moves) {
+	public void setMoves(List<PokemonMove> moves) {
 		this.moves = moves;
 	}
 
@@ -80,7 +80,7 @@ public class Pokemon {
 		result = prime * result + healthPoints;
 		result = prime * result + id;
 		result = prime * result + level;
-		result = prime * result + Arrays.hashCode(moves);
+		result = prime * result + ((moves == null) ? 0 : moves.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
@@ -101,7 +101,10 @@ public class Pokemon {
 			return false;
 		if (level != other.level)
 			return false;
-		if (!Arrays.equals(moves, other.moves))
+		if (moves == null) {
+			if (other.moves != null)
+				return false;
+		} else if (!moves.equals(other.moves))
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -119,7 +122,7 @@ public class Pokemon {
 	@Override
 	public String toString() {
 		return "Pokemon [id=" + id + ", name=" + name + ", level=" + level + ", healthPoints=" + healthPoints
-				+ ", type=" + type + ", moves=" + Arrays.toString(moves) + "]";
+				+ ", type=" + type + ", moves=" + moves + "]";
 	}
 
 }
