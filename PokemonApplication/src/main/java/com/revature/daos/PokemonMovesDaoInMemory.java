@@ -286,4 +286,15 @@ public class PokemonMovesDaoInMemory implements PokemonMovesDao {
 		return null;
 	}
 
+	@Override
+	public PokemonMove findById(int id) {
+		for (int i = 0; i < moves.size(); i++) {
+			int idFromList = moves.get(i).getId();
+			if (id == idFromList) {
+				return moves.get(i);
+			}
+		}
+		return null;
+	}
+
 }

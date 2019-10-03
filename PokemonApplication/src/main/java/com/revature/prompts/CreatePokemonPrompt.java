@@ -3,6 +3,7 @@ package com.revature.prompts;
 import java.util.List;
 import java.util.Scanner;
 
+import com.revature.daos.PokemonDao;
 import com.revature.daos.PokemonTypeDao;
 import com.revature.models.Pokemon;
 import com.revature.models.PokemonType;
@@ -10,6 +11,7 @@ import com.revature.models.PokemonType;
 public class CreatePokemonPrompt implements Prompt {
 
 	private PokemonTypeDao pokemonTypesDao = PokemonTypeDao.currentImplementation;
+	private PokemonDao pokemonDao = PokemonDao.currentImplementation;
 
 	@Override
 	public Prompt run() {
@@ -34,7 +36,7 @@ public class CreatePokemonPrompt implements Prompt {
 		scan.reset();
 
 		Pokemon p = new Pokemon(1, name, level, healthPoints, type, null);
-		System.out.println(p);
+		pokemonDao.save(p);
 		return new MainMenuPrompt();
 	}
 

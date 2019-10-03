@@ -22,24 +22,33 @@ public class PokemonTypeDaoInMemory implements PokemonTypeDao {
 		pokemonTypes.add(new PokemonType(7, "Electric", null, null));
 
 		pokemonTypes.get(0).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(5) }));
-		pokemonTypes.get(0).setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(4), pokemonTypes.get(1) }));
+		pokemonTypes.get(0)
+				.setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(4), pokemonTypes.get(1) }));
 
-		pokemonTypes.get(1).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(1), pokemonTypes.get(5), pokemonTypes.get(0) }));
+		pokemonTypes.get(1).setResistances(
+				Arrays.asList(new PokemonType[] { pokemonTypes.get(1), pokemonTypes.get(5), pokemonTypes.get(0) }));
 		pokemonTypes.get(1).setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(3) }));
 
-		pokemonTypes.get(2).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(0), pokemonTypes.get(2) }));
+		pokemonTypes.get(2)
+				.setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(0), pokemonTypes.get(2) }));
 		pokemonTypes.get(2).setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(2) }));
 
-		pokemonTypes.get(3).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(1), pokemonTypes.get(3) }));
-		pokemonTypes.get(3).setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(5), pokemonTypes.get(6) }));
+		pokemonTypes.get(3)
+				.setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(1), pokemonTypes.get(3) }));
+		pokemonTypes.get(3)
+				.setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(5), pokemonTypes.get(6) }));
 
-		pokemonTypes.get(4).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(5), pokemonTypes.get(0) }));
+		pokemonTypes.get(4)
+				.setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(5), pokemonTypes.get(0) }));
 		pokemonTypes.get(4).setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(6) }));
 
-		pokemonTypes.get(5).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(5), pokemonTypes.get(3), pokemonTypes.get(6) }));
-		pokemonTypes.get(5).setWeaknesses(Arrays.asList(new PokemonType[] { pokemonTypes.get(1), pokemonTypes.get(0), pokemonTypes.get(4) }));
+		pokemonTypes.get(5).setResistances(
+				Arrays.asList(new PokemonType[] { pokemonTypes.get(5), pokemonTypes.get(3), pokemonTypes.get(6) }));
+		pokemonTypes.get(5).setWeaknesses(
+				Arrays.asList(new PokemonType[] { pokemonTypes.get(1), pokemonTypes.get(0), pokemonTypes.get(4) }));
 
-		pokemonTypes.get(6).setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(4), pokemonTypes.get(6) }));
+		pokemonTypes.get(6)
+				.setResistances(Arrays.asList(new PokemonType[] { pokemonTypes.get(4), pokemonTypes.get(6) }));
 		pokemonTypes.get(6).setWeaknesses(Arrays.asList(new PokemonType[] {}));
 	}
 
@@ -57,6 +66,17 @@ public class PokemonTypeDaoInMemory implements PokemonTypeDao {
 	@Override
 	public PokemonType findById() {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PokemonType findByName(String name) {
+		for (int i = 0; i < pokemonTypes.size(); i++) {
+			String nameFromList = pokemonTypes.get(i).getName();
+			if (name.equals(nameFromList)) {
+				return pokemonTypes.get(i);
+			}
+		}
 		return null;
 	}
 

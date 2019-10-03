@@ -3,11 +3,14 @@ package com.revature.prompts;
 import java.util.List;
 import java.util.Scanner;
 
+import com.revature.daos.PokemonDao;
 import com.revature.daos.PokemonTypeDao;
+import com.revature.models.Pokemon;
 import com.revature.models.PokemonType;
 
 public class MainMenuPrompt implements Prompt {
 	private PokemonTypeDao pokemonTypesDao = PokemonTypeDao.currentImplementation;
+	private PokemonDao pokemonDao = PokemonDao.currentImplementation;
 
 	@Override
 	public Prompt run() {
@@ -23,7 +26,10 @@ public class MainMenuPrompt implements Prompt {
 
 		switch (selection) {
 		case "1":
-			System.out.println("view all not yet implemented");
+			List<Pokemon> pokemon = pokemonDao.findAll();
+			for(Pokemon p: pokemon) {
+				System.out.println(p);
+			}
 			break;
 		case "2":
 			return new CreatePokemonPrompt();

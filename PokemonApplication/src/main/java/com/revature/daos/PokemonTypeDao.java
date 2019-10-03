@@ -15,4 +15,6 @@ public interface PokemonTypeDao {
 	List<PokemonType> findAll();
 
 	PokemonType findById();
+
+	PokemonType findByName(String name);
 }
