@@ -13,7 +13,7 @@ public class ListDriver {
 		pets.add(new Dog("George", 2, 2, "two", "bark"));
 		pets.add(new Dog("Tim", 20, 1000, "programmer", "Code"));
 		pets.add(new Dog("Bowser", 5, 250, "Turtle", "Stealing Princess Peach"));
-
+		
 //		for (Dog d : pets) {
 //			System.out.println(d);
 //		}

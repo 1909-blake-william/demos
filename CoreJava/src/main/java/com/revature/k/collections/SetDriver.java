@@ -2,12 +2,13 @@ package com.revature.k.collections;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.revature.e.objects.Dog;
 
 public class SetDriver {
 	public static void main(String[] args) {
-		Set<Integer> numbers = new HashSet<>();
+		Set<Integer> numbers = new TreeSet<>();
 		numbers.add(5);
 		numbers.add(23);
 		numbers.add(58);
