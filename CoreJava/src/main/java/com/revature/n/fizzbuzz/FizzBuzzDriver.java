@@ -16,6 +16,7 @@ public class FizzBuzzDriver {
 	public static void fizzBuzz(List<Integer> numbers) {
 		System.out.print("after: [" );
 		for(int number: numbers) {
+			if(number % 3 == 0 && number % 5 == 0)
 			if(number % 3 == 0) {
 				if(number % 5 == 0) {
 					System.out.print("fizzbuzz, ");
