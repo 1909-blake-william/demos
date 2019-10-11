@@ -10,13 +10,13 @@ import com.revature.models.PokemonType;
 
 public class CreatePokemonPrompt implements Prompt {
 
+	private Scanner scan = new Scanner(System.in);
 	private PokemonTypeDao pokemonTypesDao = PokemonTypeDao.currentImplementation;
 	private PokemonDao pokemonDao = PokemonDao.currentImplementation;
 
 	@Override
 	public Prompt run() {
 		List<PokemonType> types = pokemonTypesDao.findAll();
-		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter pokemon name: ");
 		String name = scan.nextLine();
 		System.out.println("Select pokemon type from the following: ");
@@ -25,17 +25,17 @@ public class CreatePokemonPrompt implements Prompt {
 		}
 		int typeSelection = scan.nextInt();
 		PokemonType type = types.get(typeSelection);
-		scan.reset(); // reset scanner after getting numbers
+		scan.nextLine(); // reset scanner after getting numbers
 
 		System.out.println("Enter health points");
 		int healthPoints = scan.nextInt();
-		scan.reset();
+		scan.nextLine();
 
 		System.out.println("Enter level");
 		int level = scan.nextInt();
-		scan.reset();
+		scan.nextLine();
 
-		Pokemon p = new Pokemon(1, name, level, healthPoints, type, null);
+		Pokemon p = new Pokemon(0, name, level, healthPoints, type, null);
 		pokemonDao.save(p);
 		return new MainMenuPrompt();
 	}
