@@ -1,7 +1,7 @@
 package com.revature.q.exceptions;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.util.Arrays;
 
 public class ExceptionDriver {
 	public static void main(String[] args) {
@@ -30,6 +30,7 @@ public class ExceptionDriver {
 
 	/**
 	 * Attempts to login
+	 * 
 	 * @return
 	 * @throws IOException
 	 * @throws InvalidCredentialException

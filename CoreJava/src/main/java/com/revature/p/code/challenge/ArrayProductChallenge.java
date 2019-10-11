@@ -19,6 +19,10 @@ public class ArrayProductChallenge {
 	 * except the element at that index
 	 */
 	public static int[] solution(int[] original) {
+		
+		if(original == null) {
+			return null;
+		}
 		// problem statement doesn't really work for less than 2 elements
 		if(original.length <= 1) {
 			return null;
