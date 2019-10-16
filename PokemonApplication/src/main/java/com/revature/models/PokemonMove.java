@@ -1,6 +1,8 @@
 package com.revature.models;
 
-public class PokemonMove {
+import java.io.Serializable;
+
+public class PokemonMove implements Serializable {
 	private int id;
 	private String name;
 	private PokemonType type;

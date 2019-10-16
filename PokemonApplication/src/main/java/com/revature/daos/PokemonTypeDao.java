@@ -8,7 +8,7 @@ public interface PokemonTypeDao {
 
 	// implicitly public static final for fields
 
-	PokemonTypeDao currentImplementation = new PokemonTypeDaoInMemory();
+	PokemonTypeDao currentImplementation = new PokemonTypeDaoSerialization();
 
 	int save(PokemonType pokemonType);
 

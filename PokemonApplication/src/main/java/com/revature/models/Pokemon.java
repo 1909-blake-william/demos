@@ -1,8 +1,9 @@
 package com.revature.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Pokemon {
+public class Pokemon implements Serializable {
 	private int id;
 	private String name;
 	private int level;

@@ -6,7 +6,7 @@ import com.revature.models.Pokemon;
 
 public interface PokemonDao {
 
-	PokemonDao currentImplementation = new PokemonDaoInMemory();
+	PokemonDao currentImplementation = new PokemonDaoSerialization();
 
 	/**
 	 * used to save a new pokemon
