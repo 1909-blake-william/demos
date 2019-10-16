@@ -6,16 +6,16 @@ package com.revature.e.objects;
  * @author btkru
  *
  */
-public class Pencil {
+public class Pencil implements Comparable<Pencil> {
 	// the first 2 fields should also be private but i left just for demo sake
 	boolean isMechanical;
 	public String material;
-	
+
 	private boolean isSharp;
 	private boolean hasEraser;
 	private String color;
 	private int hardness;
-	
+
 	public Pencil(boolean isMechanical, String material, boolean isSharp, boolean hasEraser, String color,
 			int hardness) {
 		super();
@@ -26,7 +26,7 @@ public class Pencil {
 		this.color = color;
 		this.hardness = hardness;
 	}
-	
+
 	public Pencil() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -38,6 +38,7 @@ public class Pencil {
 
 	/**
 	 * Used to set whether the pencil is mechanical or not
+	 * 
 	 * @param isMechanical
 	 */
 	public void setMechanical(boolean isMechanical) {
@@ -85,7 +86,7 @@ public class Pencil {
 	}
 
 	public void setHardness(int hardness) {
-		if(hardness > 0 && hardness <= 10) {
+		if (hardness > 0 && hardness <= 10) {
 			this.hardness = hardness;
 		} else {
 			System.out.println("invalid hardness, value not updated");
@@ -97,7 +98,15 @@ public class Pencil {
 		return "Pencil [isMechanical=" + isMechanical + ", material=" + material + ", isSharp=" + isSharp
 				+ ", hasEraser=" + hasEraser + ", color=" + color + ", hardness=" + hardness + "]";
 	}
-	
-	
-	
+
+	@Override
+	public int compareTo(Pencil o) {
+		int order = this.getHardness() - o.getHardness();
+		if (order == 0) {
+			Boolean mechanical = this.isMechanical;
+			order = mechanical.compareTo(o.isMechanical());
+		}
+		return order;
+	}
+
 }
