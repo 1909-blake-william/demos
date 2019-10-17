@@ -8,6 +8,8 @@ import com.revature.e.objects.Pencil;
 
 public class ComparingLauncher {
 	public static void main(String[] args) {
+		
+		
 		List<Pencil> pencils = new ArrayList<Pencil>();
 		pencils.add(new Pencil(true, "plastic", false, false, "pink", 0));
 		pencils.add(new Pencil(true, "wood", true, false, "orange", 3));
