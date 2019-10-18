@@ -1,0 +1,6 @@
+2019-10-18 14:09:21 FATAL LoggingDriver:9 - fatal log
+2019-10-18 14:09:21 ERROR LoggingDriver:10 - error log
+2019-10-18 14:09:21 WARN  LoggingDriver:11 - warn log
+2019-10-18 14:09:21 INFO  LoggingDriver:12 - info log
+2019-10-18 14:09:21 DEBUG LoggingDriver:13 - debug log
+2019-10-18 14:09:21 TRACE LoggingDriver:14 - trace log
