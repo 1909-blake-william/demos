@@ -6,7 +6,7 @@ import com.revature.models.User;
 
 public interface UserDao {
 
-	UserDao currentImplementation = new UserDaoSerialization();
+	UserDao currentImplementation = new UserDaoSQL();
 
 	int save(User u);
 

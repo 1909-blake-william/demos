@@ -7,12 +7,14 @@ import com.revature.daos.PokemonDao;
 import com.revature.daos.PokemonTypeDao;
 import com.revature.models.Pokemon;
 import com.revature.models.PokemonType;
+import com.revature.util.AuthUtil;
 
 public class CreatePokemonPrompt implements Prompt {
 
 	private Scanner scan = new Scanner(System.in);
 	private PokemonTypeDao pokemonTypesDao = PokemonTypeDao.currentImplementation;
 	private PokemonDao pokemonDao = PokemonDao.currentImplementation;
+	private AuthUtil authUtil = AuthUtil.instance;
 
 	@Override
 	public Prompt run() {
@@ -35,7 +37,7 @@ public class CreatePokemonPrompt implements Prompt {
 		int level = scan.nextInt();
 		scan.nextLine();
 
-		Pokemon p = new Pokemon(0, name, level, healthPoints, type, null);
+		Pokemon p = new Pokemon(0, name, level, healthPoints, type, authUtil.getCurrentUser());
 		pokemonDao.save(p);
 		return new MainMenuPrompt();
 	}

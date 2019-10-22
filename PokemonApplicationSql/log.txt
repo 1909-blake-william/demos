@@ -13,3 +13,65 @@
 2019-10-18 14:21:27 INFO  LoginPrompt:46 - successfully logged in
 2019-10-18 14:21:27 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
 2019-10-18 14:21:27 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:17:43 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:19:47 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:19:48 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:19:53 DEBUG UserDaoSQL:38 - attempting to find user by credentials from DB
+2019-10-22 14:19:55 INFO  LoginPrompt:42 - failed to login due to credentials
+2019-10-22 14:19:55 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:19:55 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:20:05 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:20:12 DEBUG UserDaoSQL:38 - attempting to find user by credentials from DB
+2019-10-22 14:20:13 INFO  LoginPrompt:46 - successfully logged in
+2019-10-22 14:20:13 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:20:13 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:20:30 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:20:31 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:20:37 DEBUG UserDaoSQL:38 - attempting to find user by credentials from DB
+2019-10-22 14:20:39 INFO  LoginPrompt:46 - successfully logged in
+2019-10-22 14:20:39 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:20:39 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:21:12 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:21:20 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:21:45 DEBUG UserDaoSQL:38 - attempting to find user by credentials from DB
+2019-10-22 14:21:47 INFO  LoginPrompt:42 - failed to login due to credentials
+2019-10-22 14:21:47 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:21:47 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:22:22 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:22:36 DEBUG UserDaoSQL:38 - attempting to find user by credentials from DB
+2019-10-22 14:22:37 INFO  LoginPrompt:46 - successfully logged in
+2019-10-22 14:22:37 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:22:37 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:28:46 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:28:48 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:29:03 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:29:04 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:29:29 DEBUG UserDaoSQL:67 - attempting to find user by credentials from DB
+2019-10-22 14:29:31 INFO  LoginPrompt:42 - failed to login due to credentials
+2019-10-22 14:29:31 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:29:31 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:34:02 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:34:03 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:34:12 DEBUG UserDaoSQL:67 - attempting to find user by credentials from DB
+2019-10-22 14:34:14 INFO  LoginPrompt:42 - failed to login due to credentials
+2019-10-22 14:34:14 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:34:14 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:34:17 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:34:29 DEBUG UserDaoSQL:67 - attempting to find user by credentials from DB
+2019-10-22 14:34:30 INFO  LoginPrompt:42 - failed to login due to credentials
+2019-10-22 14:34:30 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:34:30 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:35:24 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:35:34 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:35:35 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:35:43 DEBUG UserDaoSQL:67 - attempting to find user by credentials from DB
+2019-10-22 14:35:45 INFO  LoginPrompt:42 - failed to login due to credentials
+2019-10-22 14:35:45 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:35:45 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 14:35:55 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 14:35:57 DEBUG UserDaoSQL:67 - attempting to find user by credentials from DB
+2019-10-22 14:35:59 INFO  LoginPrompt:46 - successfully logged in
+2019-10-22 14:35:59 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:35:59 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 14:41:22 DEBUG UserDaoSQL:28 - attempting to find user by credentials from DB
+2019-10-22 14:48:46 DEBUG UserDaoSQL:36 - attempting to find user by credentials from DB

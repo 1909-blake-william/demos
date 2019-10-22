@@ -1,7 +1,6 @@
 package com.revature.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Pokemon implements Serializable {
 	private int id;
@@ -9,21 +8,21 @@ public class Pokemon implements Serializable {
 	private int level;
 	private int healthPoints;
 	private PokemonType type;
-	private List<PokemonMove> moves;
+	private User trainer;
 
 	public Pokemon() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pokemon(int id, String name, int level, int healthPoints, PokemonType type, List<PokemonMove> moves) {
+	public Pokemon(int id, String name, int level, int healthPoints, PokemonType type, User trainer) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.level = level;
 		this.healthPoints = healthPoints;
 		this.type = type;
-		this.moves = moves;
+		this.trainer = trainer;
 	}
 
 	public int getId() {
@@ -66,12 +65,12 @@ public class Pokemon implements Serializable {
 		this.type = type;
 	}
 
-	public List<PokemonMove> getMoves() {
-		return moves;
+	public User getTrainer() {
+		return trainer;
 	}
 
-	public void setMoves(List<PokemonMove> moves) {
-		this.moves = moves;
+	public void setTrainer(User trainer) {
+		this.trainer = trainer;
 	}
 
 	@Override
@@ -81,8 +80,8 @@ public class Pokemon implements Serializable {
 		result = prime * result + healthPoints;
 		result = prime * result + id;
 		result = prime * result + level;
-		result = prime * result + ((moves == null) ? 0 : moves.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((trainer == null) ? 0 : trainer.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -102,15 +101,15 @@ public class Pokemon implements Serializable {
 			return false;
 		if (level != other.level)
 			return false;
-		if (moves == null) {
-			if (other.moves != null)
-				return false;
-		} else if (!moves.equals(other.moves))
-			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
+			return false;
+		if (trainer == null) {
+			if (other.trainer != null)
+				return false;
+		} else if (!trainer.equals(other.trainer))
 			return false;
 		if (type == null) {
 			if (other.type != null)
@@ -123,7 +122,7 @@ public class Pokemon implements Serializable {
 	@Override
 	public String toString() {
 		return "Pokemon [id=" + id + ", name=" + name + ", level=" + level + ", healthPoints=" + healthPoints
-				+ ", type=" + type + ", moves=" + moves + "]";
+				+ ", type=" + type + ", trainer=" + trainer + "]";
 	}
 
 }
