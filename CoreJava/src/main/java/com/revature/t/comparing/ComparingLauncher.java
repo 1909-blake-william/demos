@@ -32,7 +32,7 @@ public class ComparingLauncher {
 			return o1.getColor().compareTo(o2.getColor());
 		});
 		
-		pencils.forEach((Pencil p) -> {
+		pencils.forEach((Pencil mp) -> {
 			System.out.println(p);
 		});
 

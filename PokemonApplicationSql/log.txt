@@ -1,0 +1,15 @@
+2019-10-18 14:13:38 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-18 14:13:50 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-18 14:13:50 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-18 14:14:00 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.CreatePokemonPrompt
+2019-10-18 14:14:00 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.CreatePokemonPrompt
+2019-10-18 14:17:01 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-18 14:17:03 DEBUG LoginPrompt:24 - attempting to login
+2019-10-18 14:17:07 INFO  LoginPrompt:36 - successfully logged in
+2019-10-18 14:17:07 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-18 14:17:07 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-18 14:21:21 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-18 14:21:23 DEBUG LoginPrompt:34 - attempting to login
+2019-10-18 14:21:27 INFO  LoginPrompt:46 - successfully logged in
+2019-10-18 14:21:27 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-18 14:21:27 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
