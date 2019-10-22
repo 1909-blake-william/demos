@@ -6,7 +6,7 @@ import com.revature.models.Pokemon;
 
 public interface PokemonDao {
 
-	PokemonDao currentImplementation = new PokemonDaoSerialization();
+	PokemonDao currentImplementation = new PokemonDaoSQL();
 
 	/**
 	 * used to save a new pokemon
@@ -18,7 +18,11 @@ public interface PokemonDao {
 
 	List<Pokemon> findAll();
 
-	Pokemon findById();
+	List<Pokemon> findByName(String name);
+
+	List<Pokemon> findByTypeId(int typeId);
+
+	Pokemon findById(int id);
 
 	void release(int pokemonId);
 

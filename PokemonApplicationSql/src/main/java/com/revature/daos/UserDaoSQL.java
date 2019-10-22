@@ -27,13 +27,29 @@ public class UserDaoSQL implements UserDao {
 
 	@Override
 	public int save(User u) {
-		// TODO Auto-generated method stub
-		return 0;
+		log.debug("attempting to find user by credentials from DB");
+		try (Connection c = ConnectionUtil.getConnection()) {
+
+			String sql = "INSERT INTO pokemon_users (user_id, username, password) "
+					+ " VALUES (pokemon_users_id_seq.nextval ,?,?)";
+
+			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setString(1, u.getUsername());
+			ps.setString(2, u.getPassword());
+
+			return ps.executeUpdate();
+
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+//			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	@Override
 	public List<User> findAll() {
-		log.debug("attempting to find user by credentials from DB");
+		log.debug("attempting to find all users from DB");
 		try (Connection c = ConnectionUtil.getConnection()) {
 
 			String sql = "SELECT * FROM pokemon_users";

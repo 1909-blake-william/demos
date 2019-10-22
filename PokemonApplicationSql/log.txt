@@ -75,3 +75,14 @@
 2019-10-22 14:35:59 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
 2019-10-22 14:41:22 DEBUG UserDaoSQL:28 - attempting to find user by credentials from DB
 2019-10-22 14:48:46 DEBUG UserDaoSQL:36 - attempting to find user by credentials from DB
+2019-10-22 15:40:00 DEBUG PokemonDaoSQL:41 - attempting to find all users from DB
+2019-10-22 15:40:33 DEBUG PokemonDaoSQL:41 - attempting to find all users from DB
+2019-10-22 15:40:59 DEBUG PokemonDaoSQL:41 - attempting to find all users from DB
+2019-10-22 15:49:34 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-22 15:49:36 DEBUG PokemonDaoSQL:64 - attempting to find pokemon by id from DB
+2019-10-22 15:49:37 DEBUG PokemonDaoSQL:120 - attempting to find pokemon by type from DB
+2019-10-22 15:49:38 DEBUG PokemonDaoSQL:95 - attempting to find pokemon by name from DB
+2019-10-22 15:51:21 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-22 15:51:23 DEBUG PokemonDaoSQL:64 - attempting to find pokemon by id from DB
+2019-10-22 15:51:24 DEBUG PokemonDaoSQL:120 - attempting to find pokemon by type from DB
+2019-10-22 15:51:25 DEBUG PokemonDaoSQL:95 - attempting to find pokemon by name from DB
