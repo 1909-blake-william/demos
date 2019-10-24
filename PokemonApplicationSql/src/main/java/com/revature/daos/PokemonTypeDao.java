@@ -8,11 +8,15 @@ public interface PokemonTypeDao {
 
 	// implicitly public static final for fields
 
-	PokemonTypeDao currentImplementation = new PokemonTypeDaoSerialization();
+	PokemonTypeDao currentImplementation = new PokemonTypeDaoSQL();
 
 	int save(PokemonType pokemonType);
 
 	List<PokemonType> findAll();
+
+	List<PokemonType> findResistances(int typeId);
+
+	List<PokemonType> findWeaknesses(int typeId);
 
 	PokemonType findById();
 

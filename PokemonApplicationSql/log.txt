@@ -86,3 +86,52 @@
 2019-10-22 15:51:23 DEBUG PokemonDaoSQL:64 - attempting to find pokemon by id from DB
 2019-10-22 15:51:24 DEBUG PokemonDaoSQL:120 - attempting to find pokemon by type from DB
 2019-10-22 15:51:25 DEBUG PokemonDaoSQL:95 - attempting to find pokemon by name from DB
+2019-10-22 16:50:52 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 16:51:10 DEBUG UserDaoSQL:30 - attempting to find user by credentials from DB
+2019-10-22 16:51:12 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.LoginPrompt
+2019-10-22 16:51:12 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-22 16:51:17 DEBUG LoginPrompt:34 - attempting to login
+2019-10-22 16:51:20 DEBUG UserDaoSQL:109 - attempting to find user by credentials from DB
+2019-10-22 16:51:21 INFO  LoginPrompt:46 - successfully logged in
+2019-10-22 16:51:21 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-22 16:51:21 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-24 10:37:46 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-24 10:37:51 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-24 10:38:02 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-24 10:38:05 DEBUG PokemonDaoSQL:64 - attempting to find pokemon by id from DB
+2019-10-24 10:38:06 DEBUG PokemonDaoSQL:120 - attempting to find pokemon by type from DB
+2019-10-24 10:38:07 DEBUG PokemonDaoSQL:95 - attempting to find pokemon by name from DB
+2019-10-24 10:39:11 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-24 10:39:13 DEBUG PokemonDaoSQL:64 - attempting to find pokemon by id from DB
+2019-10-24 10:39:14 DEBUG PokemonDaoSQL:120 - attempting to find pokemon by type from DB
+2019-10-24 10:39:15 DEBUG PokemonDaoSQL:95 - attempting to find pokemon by name from DB
+2019-10-24 10:40:17 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-24 10:40:51 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-24 10:41:18 DEBUG PokemonDaoSQL:40 - attempting to find all pokemon from DB
+2019-10-24 10:41:20 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 10:41:21 DEBUG PokemonDaoSQL:125 - attempting to find pokemon by type from DB
+2019-10-24 10:41:22 DEBUG PokemonDaoSQL:100 - attempting to find pokemon by name from DB
+2019-10-24 11:28:27 DEBUG PokemonDaoSQL:43 - attempting to find all pokemon from DB
+2019-10-24 11:28:30 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 11:28:31 DEBUG PokemonDaoSQL:124 - attempting to find pokemon by type from DB
+2019-10-24 11:30:26 DEBUG PokemonDaoSQL:43 - attempting to find all pokemon from DB
+2019-10-24 11:30:28 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 11:30:29 DEBUG PokemonDaoSQL:130 - attempting to find pokemon by type from DB
+2019-10-24 11:31:26 DEBUG PokemonDaoSQL:43 - attempting to find all pokemon from DB
+2019-10-24 11:31:28 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 11:31:29 DEBUG PokemonDaoSQL:130 - attempting to find pokemon by type from DB
+2019-10-24 11:31:30 DEBUG PokemonDaoSQL:102 - attempting to find pokemon by name from DB
+2019-10-24 11:46:20 DEBUG PokemonDaoSQL:43 - attempting to find all pokemon from DB
+2019-10-24 11:46:23 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 11:46:24 DEBUG PokemonDaoSQL:130 - attempting to find pokemon by type from DB
+2019-10-24 11:46:25 DEBUG PokemonTypeDaoSQL:61 - attempting to find all pokemon from DB
+2019-10-24 11:48:24 DEBUG PokemonDaoSQL:43 - attempting to find all pokemon from DB
+2019-10-24 11:48:26 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 11:48:27 DEBUG PokemonDaoSQL:130 - attempting to find pokemon by type from DB
+2019-10-24 11:48:29 DEBUG PokemonTypeDaoSQL:61 - attempting to find all pokemon from DB
+2019-10-24 11:48:30 DEBUG PokemonDaoSQL:102 - attempting to find pokemon by name from DB
+2019-10-24 11:48:42 DEBUG PokemonDaoSQL:43 - attempting to find all pokemon from DB
+2019-10-24 11:48:44 DEBUG PokemonDaoSQL:69 - attempting to find pokemon by id from DB
+2019-10-24 11:48:45 DEBUG PokemonDaoSQL:130 - attempting to find pokemon by type from DB
+2019-10-24 11:48:46 DEBUG PokemonTypeDaoSQL:61 - attempting to find all pokemon from DB
+2019-10-24 11:48:47 DEBUG PokemonDaoSQL:102 - attempting to find pokemon by name from DB

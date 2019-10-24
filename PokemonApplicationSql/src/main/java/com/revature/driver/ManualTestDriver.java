@@ -1,6 +1,7 @@
 package com.revature.driver;
 
 import com.revature.daos.PokemonDao;
+import com.revature.daos.PokemonTypeDao;
 import com.revature.daos.UserDao;
 
 public class ManualTestDriver {
@@ -8,6 +9,7 @@ public class ManualTestDriver {
 
 		UserDao userDao = UserDao.currentImplementation;
 		PokemonDao pokeDao = PokemonDao.currentImplementation;
+		PokemonTypeDao typeDao = PokemonTypeDao.currentImplementation;
 
 		// find all
 //		List<User> users = userDao.findAll();
@@ -27,10 +29,16 @@ public class ManualTestDriver {
 		System.out.println(pokeDao.findById(pokeId));
 
 		// pokemon by type
-		int typeId = 2;
+		int typeId = 1;
 		System.out.println("pokemon with typeid: " + typeId);
 		pokeDao.findByTypeId(typeId).forEach(pokemon -> {
 			System.out.println(pokemon);
+		});
+
+		// weakness by type
+		System.out.println("weaknesses for pokemon with typeid: " + typeId);
+		typeDao.findWeaknesses(typeId).forEach(type -> {
+			System.out.println(type);
 		});
 
 		// pokemon by name
@@ -39,5 +47,6 @@ public class ManualTestDriver {
 		pokeDao.findByName(pokeName).forEach(pokemon -> {
 			System.out.println(pokemon);
 		});
+
 	}
 }
