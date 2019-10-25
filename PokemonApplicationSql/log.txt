@@ -135,3 +135,34 @@
 2019-10-24 11:48:45 DEBUG PokemonDaoSQL:130 - attempting to find pokemon by type from DB
 2019-10-24 11:48:46 DEBUG PokemonTypeDaoSQL:61 - attempting to find all pokemon from DB
 2019-10-24 11:48:47 DEBUG PokemonDaoSQL:102 - attempting to find pokemon by name from DB
+2019-10-25 14:31:26 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-25 14:31:27 DEBUG LoginPrompt:34 - attempting to login
+2019-10-25 14:31:31 DEBUG UserDaoSQL:109 - attempting to find user by credentials from DB
+2019-10-25 14:31:33 INFO  LoginPrompt:46 - successfully logged in
+2019-10-25 14:31:33 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:31:33 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:31:36 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.CreatePokemonPrompt
+2019-10-25 14:31:36 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.CreatePokemonPrompt
+2019-10-25 14:33:55 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.LoginPrompt
+2019-10-25 14:33:57 DEBUG LoginPrompt:34 - attempting to login
+2019-10-25 14:34:02 DEBUG UserDaoSQL:109 - attempting to find user by credentials from DB
+2019-10-25 14:34:04 INFO  LoginPrompt:46 - successfully logged in
+2019-10-25 14:34:04 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:04 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:06 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.ViewPokemonPrompt
+2019-10-25 14:34:06 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.ViewPokemonPrompt
+2019-10-25 14:34:06 DEBUG PokemonDaoSQL:63 - attempting to find all pokemon from DB
+2019-10-25 14:34:07 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:07 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:17 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.CreatePokemonPrompt
+2019-10-25 14:34:17 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.CreatePokemonPrompt
+2019-10-25 14:34:17 DEBUG PokemonTypeDaoSQL:38 - attempting to find all pokemon from DB
+2019-10-25 14:34:38 DEBUG PokemonDaoSQL:39 - creating a new pokemon
+2019-10-25 14:34:39 DEBUG PokemonDaoSQL:52 - generated pokemon id is: 69
+2019-10-25 14:34:39 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:39 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:45 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.ViewPokemonPrompt
+2019-10-25 14:34:45 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.ViewPokemonPrompt
+2019-10-25 14:34:45 DEBUG PokemonDaoSQL:63 - attempting to find all pokemon from DB
+2019-10-25 14:34:46 DEBUG PokemonDriver:17 - next prompt is of type: class com.revature.prompts.MainMenuPrompt
+2019-10-25 14:34:46 DEBUG PokemonDriver:15 - starting prompt of type: class com.revature.prompts.MainMenuPrompt

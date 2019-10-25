@@ -1,9 +1,11 @@
 package com.revature.daos;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +36,26 @@ public class PokemonDaoSQL implements PokemonDao {
 
 	@Override
 	public int save(Pokemon p) {
+		log.debug("creating a new pokemon");
+		try (Connection c = ConnectionUtil.getConnection()) {
+			CallableStatement cs = c.prepareCall("call create_pokemon(?,?,?,?,?,?)");
+			cs.setString(1, p.getName());
+			cs.setInt(2, p.getHealthPoints());
+			cs.setInt(3, p.getLevel());
+			cs.setInt(4, p.getType().getId());
+			cs.setInt(5, p.getTrainer().getId());
 
-		return 0;
+			cs.registerOutParameter(6, Types.INTEGER);
+			cs.execute();
+
+			int generatedId = cs.getInt(6);
+			log.debug("generated pokemon id is: " + generatedId);
+			return generatedId;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	@Override
@@ -69,10 +89,9 @@ public class PokemonDaoSQL implements PokemonDao {
 		log.debug("attempting to find pokemon by id from DB");
 		try (Connection c = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM pokemon p " 
+			String sql = "SELECT * FROM pokemon p "
 					+ "LEFT JOIN pokemon_types t ON (p.pokemon_type_id = t.pokemon_types_id) "
-					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) "
-					+ "WHERE pokemon_id = ? ";
+					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) " + "WHERE pokemon_id = ? ";
 
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setInt(1, id);
@@ -102,10 +121,9 @@ public class PokemonDaoSQL implements PokemonDao {
 		log.debug("attempting to find pokemon by name from DB");
 		try (Connection c = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM pokemon p " 
+			String sql = "SELECT * FROM pokemon p "
 					+ "LEFT JOIN pokemon_types t ON (p.pokemon_type_id = t.pokemon_types_id) "
-					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) "
-					+ "WHERE pokemon_name = ?";
+					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) " + "WHERE pokemon_name = ?";
 
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setString(1, name);
@@ -130,10 +148,9 @@ public class PokemonDaoSQL implements PokemonDao {
 		log.debug("attempting to find pokemon by type from DB");
 		try (Connection c = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM pokemon p " 
+			String sql = "SELECT * FROM pokemon p "
 					+ "LEFT JOIN pokemon_types t ON (p.pokemon_type_id = t.pokemon_types_id) "
-					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) "
-					+ "WHERE pokemon_type_id = ?";
+					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) " + "WHERE pokemon_type_id = ?";
 
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setInt(1, typeId);

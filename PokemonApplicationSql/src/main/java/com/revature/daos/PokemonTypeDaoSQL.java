@@ -35,7 +35,21 @@ public class PokemonTypeDaoSQL implements PokemonTypeDao {
 
 	@Override
 	public List<PokemonType> findAll() {
-		return null;
+		log.debug("attempting to find all pokemon from DB");
+		try (Connection c = ConnectionUtil.getConnection()) {
+
+			String sql = "SELECT * FROM pokemon_types";
+
+			PreparedStatement ps = c.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			return extractTypes(rs);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override

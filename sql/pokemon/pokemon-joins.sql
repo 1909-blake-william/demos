@@ -12,11 +12,16 @@ LEFT JOIN pokemon_types t ON (p.pokemon_type_id = t.pokemon_types_id)
 LEFT JOIN pokemon_users u ON (p.trainer = u.user_id);
 
 SELECT * FROM pokemon p
-LEFT JOIN pokemon_types t ON (p.pokemon_type_id = t.pokemon_types_id)
+LEFT JOIN pokemon_types t ON p.pokemon_type_id = t.pokemon_types_id
 LEFT JOIN pokemon_resistances r USING (pokemon_type_id)
 LEFT JOIN pokemon_types rt ON (r.resistance_id = rt.pokemon_types_id)
 LEFT JOIN pokemon_weaknesses w USING (pokemon_type_id)
 LEFT JOIN pokemon_types wt ON (w.weakness_id = wt.pokemon_types_id);
+
+
+select COUNT(w.pokemon_type_id) from pokemon_types t inner join pokemon_weaknesses w
+on t.pokemon_types_id = w.pokemon_type_id
+group by t.pokemon_types_id;
 
 
 SELECT t.pokemon_types_id t_id, t.name t_name, resistance_id r_id, rt.name r_name, weakness_id w_id, wt.name w_name 
@@ -36,3 +41,4 @@ INNER JOIN pokemon_types t ON (p.pokemon_name = t.name);
 -- Cross joins
 SELECT * FROM pokemon CROSS JOIN pokemon_types;
 SELECT * FROM pokemon, pokemon_types;
+
