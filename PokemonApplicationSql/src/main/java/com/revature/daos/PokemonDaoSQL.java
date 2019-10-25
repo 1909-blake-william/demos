@@ -89,9 +89,7 @@ public class PokemonDaoSQL implements PokemonDao {
 		log.debug("attempting to find pokemon by id from DB");
 		try (Connection c = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM pokemon p "
-					+ "LEFT JOIN pokemon_types t ON (p.pokemon_type_id = t.pokemon_types_id) "
-					+ "LEFT JOIN pokemon_users u ON (p.trainer = u.user_id) " + "WHERE pokemon_id = ? ";
+			String sql = "SELECT * FROM pokemon_joined_data " + "WHERE pokemon_id = ? ";
 
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setInt(1, id);
