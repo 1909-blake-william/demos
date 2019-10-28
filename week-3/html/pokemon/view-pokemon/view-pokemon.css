@@ -1,0 +1,16 @@
+#pokemon-table {
+    width: 75%;
+    margin: auto;
+    margin-top: 1em;
+}
+
+#pokemon-table tr:hover {
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 0px 10px 1px #ff99cc;
+    -moz-box-shadow: inset 0px 0px 10px 1px #ff99cc;
+    box-shadow: inset 0px 0px 10px 1px #ff99cc;
+}
+
+#pokemon-table td {
+    border: 1px solid #bfbfbf;
+}

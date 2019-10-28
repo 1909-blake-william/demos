@@ -5,6 +5,10 @@ p {
     padding: 0.5em;
 }
 
+p {
+    color: blue;
+}
+
 #p2 {
     font-size: 20pt;
     border-color: aqua;
