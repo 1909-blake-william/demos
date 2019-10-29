@@ -28,7 +28,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -57,7 +57,7 @@
                 <th scope="col">Trainer</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="pokemon-table-body">
             <tr>
                 <td>Nic</td>
                 <td>Ghost</td>
@@ -89,6 +89,36 @@
         </tbody>
     </table>
 
+    <form id="new-pokemon-form" onsubmit="newPokemonSubmit(event)">
+        <div class="form-group">
+            <label for="pokemon-name-input">Pokemon Name:</label>
+            <input type="text" class="form-control" 
+                id="pokemon-name-input" 
+                placeholder="Pikachu">
+        </div>
+        <div class="form-group">
+            <label for="pokemon-type-select">Type</label>
+            <select class="form-control" id="pokemon-type-select">
+                <option>Fire</option>
+                <option>Ghost</option>
+                <option>Dragon</option>
+                <option>Dark</option>
+                <option>Electric</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pokemon-hp-input">HP:</label>
+            <input type="number" class="form-control" 
+                id="pokemon-hp-input">
+        </div>
+        <div class="form-group">
+            <label for="pokemon-level-input">Level:</label>
+            <input type="number" class="form-control" 
+                id="pokemon-level-input">
+        </div>
+        <button class="btn btn-danger" type="submit">Submit</button>
+    </form>
+
 
 </body>
 <!-- JS -->
@@ -101,5 +131,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
+<script src="view-pokemon.js"></script>
 
 </html>

@@ -14,3 +14,7 @@
 #pokemon-table td {
     border: 1px solid #bfbfbf;
 }
+
+#new-pokemon-form {
+    padding: 1em 25%;
+}
