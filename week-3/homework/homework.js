@@ -71,14 +71,6 @@
 // *****
 //  ***
 //   *
-// What about printShape("Diamond", evenNumber, "*");????
-//i will assume like this
-//   **
-//  ****
-// ******
-// ******
-//  ****
-//   **
 
 
 // 9. Object literal
