@@ -105,11 +105,11 @@
 // 12. Defining an object using a constructor
 // Define a function Person(name, age)
 // The following line should set a Person object to the variable john:
-// 	var john = new Person("John", 30);
+// 	let john = new Person("John", 30);
 
 
 // 13. Defining an object using an object literal
 // Define function getPerson(name, age)
 // The following line should set a Person object to the variable john:
-// 	var john = getPerson("John", 30);
+// 	let john = getPerson("John", 30);
 
