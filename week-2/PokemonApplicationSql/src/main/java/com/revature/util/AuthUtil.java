@@ -1,4 +1,4 @@
-ackage com.revature.util;
+package com.revature.util;
 
 import com.revature.daos.UserDao;
 import com.revature.models.User;

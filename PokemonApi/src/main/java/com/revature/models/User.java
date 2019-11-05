@@ -2,16 +2,32 @@ package com.revature.models;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class User implements Serializable {
 	private int id;
 	private String username;
+
+	// allow jackson to convert passwords in json to the java object
+	// but don't allow it to convert the password in object to json
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
+	
 	private String role;
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public User(int id) {
+		super();
+		this.id = id;
+	}
+
+
+
 
 	public User(int id, String username, String password, String role) {
 		super();

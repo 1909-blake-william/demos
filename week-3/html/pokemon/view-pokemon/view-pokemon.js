@@ -3,8 +3,22 @@ function newPokemonSubmit(event) {
     console.log('submitted');
     
     const pokemon = getPokemonFromInputs();
-    addPokemonToTableSafe(pokemon);
-    console.log(pokemon);
+
+    fetch('http://localhost:8080/PokemonApi/pokemon', {
+        method: 'POST',
+        body: JSON.stringify(pokemon),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        addPokemonToTableSafe(data);
+        console.log(data);
+    })
+    .catch(err => console.log(err));
+
+    
 }
 
 function addPokemonToTableSafe(pokemon) {
@@ -22,7 +36,7 @@ function addPokemonToTableSafe(pokemon) {
     row.appendChild(typeData);
 
     const hpData = document.createElement('td');
-    hpData.innerText = pokemon.hp;
+    hpData.innerText = pokemon.healthPoints;
     row.appendChild(hpData);
 
     const levelData = document.createElement('td');
@@ -30,7 +44,7 @@ function addPokemonToTableSafe(pokemon) {
     row.appendChild(levelData);
 
     const trainerData = document.createElement('td');
-    trainerData.innerText = pokemon.trainer.name;
+    trainerData.innerText = pokemon.trainer.username;
     row.appendChild(trainerData);
 
     // append the row into the table
@@ -42,9 +56,9 @@ function addPokemonToTable(pokemon) {
     <tr>
         <td>${pokemon.name}</td>
         <td>${pokemon.type.name}</td>
-        <td>${pokemon.hp}</td>
+        <td>${pokemon.healthPoints}</td>
         <td>${pokemon.level}</td>
-        <td>${pokemon.trainer.name}</td>
+        <td>${pokemon.trainer.username}</td>
     </tr>
     `;
 }
@@ -58,15 +72,27 @@ function getPokemonFromInputs() {
 
     const pokemon = {
         name: pokemonName,
-        hp: pokemonHp,
+        healthPoints: pokemonHp,
         level: pokemonLevel,
         type: {
             id: 5, // should probably find a way to get the correct id
             name: pokemonType
         },
         trainer: {
-            name: 'blake' // should probably get the rest of the trainer info
+            id: 1,
+            username: 'btkruppa' // should probably get the rest of the trainer info
         }
     }
     return pokemon;
 }
+
+function refreshTable() {
+    fetch('http://localhost:8080/PokemonApi/pokemon')
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(addPokemonToTableSafe)
+        })
+        .catch(console.log);
+}
+
+refreshTable();
