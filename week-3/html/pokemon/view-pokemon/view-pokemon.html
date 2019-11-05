@@ -29,6 +29,10 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="/chuck-norris/chuck-norris.html">Chuck Norris <span
+                            class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -44,6 +48,19 @@
             <form class="form-inline my-2 my-md-0">
                 <input class="form-control" type="text" placeholder="Search">
             </form>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a id="users-name" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown05">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#" active>View Pokemon</a>
+                        <a class="dropdown-item" href="#">Catch Pokemon</a>
+                        <a class="dropdown-item" href="#">Pokemon Types</a>
+                        <a class="dropdown-item" href="#">Release Pokemon</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -92,9 +109,7 @@
     <form id="new-pokemon-form" onsubmit="newPokemonSubmit(event)">
         <div class="form-group">
             <label for="pokemon-name-input">Pokemon Name:</label>
-            <input type="text" class="form-control" 
-                id="pokemon-name-input" 
-                placeholder="Pikachu">
+            <input type="text" class="form-control" id="pokemon-name-input" placeholder="Pikachu">
         </div>
         <div class="form-group">
             <label for="pokemon-type-select">Type</label>
@@ -108,13 +123,11 @@
         </div>
         <div class="form-group">
             <label for="pokemon-hp-input">HP:</label>
-            <input type="number" class="form-control" 
-                id="pokemon-hp-input">
+            <input type="number" class="form-control" id="pokemon-hp-input">
         </div>
         <div class="form-group">
             <label for="pokemon-level-input">Level:</label>
-            <input type="number" class="form-control" 
-                id="pokemon-level-input">
+            <input type="number" class="form-control" id="pokemon-level-input">
         </div>
         <button class="btn btn-danger" type="submit">Submit</button>
     </form>

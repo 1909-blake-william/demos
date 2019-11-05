@@ -21,6 +21,11 @@
 		<servlet-class>com.revature.servlets.UserServlet</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>AuthServlet</servlet-name>
+		<servlet-class>com.revature.servlets.AuthServlet</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>OurFirstServlet</servlet-name>
 		<url-pattern>/first</url-pattern>
@@ -34,6 +39,10 @@
 	<servlet-mapping>
 		<servlet-name>UserServlet</servlet-name>
 		<url-pattern>/users/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AuthServlet</servlet-name>
+		<url-pattern>/auth/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>
