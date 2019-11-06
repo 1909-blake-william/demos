@@ -20,7 +20,8 @@ public class PokemonServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		super.service(req, resp);
-		System.out.println(req.getLocalName());
+		System.out.println("To context param: " + req.getServletContext().getInitParameter("To"));
+		
 		resp.addHeader("Access-Control-Allow-Origin", "http://localhost:5501");
 		resp.addHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, HEAD");
 		resp.addHeader("Access-Control-Allow-Headers",

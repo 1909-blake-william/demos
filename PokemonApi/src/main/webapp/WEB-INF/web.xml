@@ -4,10 +4,20 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>PokemonApi</display-name>
+	
+	<context-param>
+		<param-name>To</param-name>
+		<param-value>Go</param-value>
+	</context-param>
 
 	<servlet>
 		<servlet-name>OurFirstServlet</servlet-name>
 		<servlet-class>com.revature.servlets.FirstServlet</servlet-class>
+		<init-param>
+			<param-name>Poto</param-name>
+			<param-value>Baked</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet>
@@ -44,5 +54,7 @@
 		<servlet-name>AuthServlet</servlet-name>
 		<url-pattern>/auth/*</url-pattern>
 	</servlet-mapping>
+	
+	
 
 </web-app>
