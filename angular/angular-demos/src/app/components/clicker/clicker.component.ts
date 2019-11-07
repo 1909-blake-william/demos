@@ -10,7 +10,7 @@ export class ClickerComponent implements OnInit, OnDestroy {
   clickAmount = 0;
   autoAmount = 0;
 
-  autoInterval: NodeJS.Timer;
+  autoInterval;
 
   plusTwoUnlocked = false;
 
