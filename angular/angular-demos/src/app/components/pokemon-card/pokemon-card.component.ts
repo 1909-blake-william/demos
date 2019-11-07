@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from 'src/app/model/pokemon.model';
 
 @Component({
@@ -8,22 +8,8 @@ import { Pokemon } from 'src/app/model/pokemon.model';
 })
 export class PokemonCardComponent implements OnInit {
 
-  pokemon: Pokemon = {
-    id: 5,
-    healthPoints: 50,
-    level: 10,
-    name: 'Gyarados',
-    trainer: {
-      id: 1,
-      username: 'Clifford',
-      password: null,
-      role: 'trainer'
-    },
-    type: {
-      id: 2,
-      name: 'water'
-    }
-  };
+  @Input()
+  pokemon: Pokemon;
 
   infoToggled = false;
 
