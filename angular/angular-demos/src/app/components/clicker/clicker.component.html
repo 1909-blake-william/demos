@@ -1,1 +1,25 @@
-<p>clicker works!</p>
+<div class="clicker-container">
+    <p [ngClass]="{pink: clickAmount % 5 === 0}">
+        Clicks: {{ clickAmount }}
+    </p>
+    <button class="btn btn-danger" (click)="increment(1)">
+        +1
+    </button>
+
+    <button *ngIf="plusTwoUnlocked"
+        class="btn btn-danger" 
+        (click)="increment(2)">
+        +2
+    </button>
+
+
+    <button class="btn btn-warning" (click)="incrementAuto(1)" [disabled]="clickAmount < 25">
+        +1 Auto Click
+    </button>
+    <button *ngIf="!plusTwoUnlocked" 
+        class="btn btn-success" 
+        (click)="unlockPlusTwo()"
+        [disabled]="clickAmount < 100">
+        Unlock +2
+    </button>
+</div>
