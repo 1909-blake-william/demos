@@ -19,6 +19,7 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { UsersComponent } from './components/users/users.component';
 import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
 import { SpringComponent } from './components/spring/spring.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SpringComponent } from './components/spring/spring.component';
     PokemonComponent,
     UsersComponent,
     TicTacToeComponent,
-    SpringComponent
+    SpringComponent,
+    PokemonCardComponent
   ],
   imports: [
     BrowserModule,
