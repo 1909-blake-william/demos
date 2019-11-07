@@ -25,4 +25,13 @@ export class PokemonComponent implements OnInit {
       });
   }
 
+  release(id: number) {
+    this.httpClient.delete(`http://localhost:8080/PokemonApi/pokemon?id=${id}`)
+      .subscribe(data => {
+        this.pokemon = this.pokemon.filter(poke => poke.id !== id);
+      }, err => {
+        console.log(err);
+      });
+  }
+
 }

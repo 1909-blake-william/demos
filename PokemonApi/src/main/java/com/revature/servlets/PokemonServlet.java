@@ -23,6 +23,7 @@ public class PokemonServlet extends HttpServlet {
 		System.out.println("To context param: " + req.getServletContext().getInitParameter("To"));
 
 		resp.addHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+		resp.addHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, HEAD");
 		resp.addHeader("Access-Control-Allow-Headers",
 				"Origin, Methods, Credentials, X-Requested-With, Content-Type, Accept");
 		resp.addHeader("Access-Control-Allow-Credentials", "true");
@@ -65,5 +66,12 @@ public class PokemonServlet extends HttpServlet {
 		resp.getWriter().write(json);
 		resp.setStatus(201); // created status code
 
+	}
+	
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String idString = req.getParameter("id");
+		int id = Integer.parseInt(idString);
+		pokeDao.release(id);
 	}
 }

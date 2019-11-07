@@ -16,6 +16,7 @@ export class PokemonCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   toggleInfo() {

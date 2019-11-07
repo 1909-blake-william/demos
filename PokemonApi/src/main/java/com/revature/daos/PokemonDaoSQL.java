@@ -110,8 +110,20 @@ public class PokemonDaoSQL implements PokemonDao {
 
 	@Override
 	public void release(int pokemonId) {
-		// TODO Auto-generated method stub
+		log.debug("attempting to find pokemon by id from DB");
+		try (Connection c = ConnectionUtil.getConnection()) {
 
+			String sql = "DELETE FROM pokemon WHERE pokemon_id = ? ";
+
+			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setInt(1, pokemonId);
+
+			ResultSet rs = ps.executeQuery();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

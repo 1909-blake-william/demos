@@ -1,3 +1,12 @@
 .card-column {
     margin-bottom: 1em;
 }
+
+#pokemon-table-body {
+    tr:hover {
+        cursor: pointer;
+        -webkit-box-shadow: inset 0px 0px 10px 1px #ff99cc;
+        -moz-box-shadow: inset 0px 0px 10px 1px #ff99cc;
+        box-shadow: inset 0px 0px 10px 1px #ff99cc;
+    }
+}

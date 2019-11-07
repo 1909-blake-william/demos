@@ -1,3 +1,29 @@
+<table class="table" id="pokemon-table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">HP</th>
+                <th scope="col">Level</th>
+                <th scope="col">Trainer</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="pokemon-table-body">
+            <tr *ngFor="let poke of pokemon">
+                <td>{{poke.name}}</td>
+                <td>{{poke.type.name}}</td>
+                <td>{{poke.healthPoints}}</td>
+                <td>{{poke.level}}</td>
+                <td>{{poke.trainer?.username}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="release(poke.id)">
+                        Release
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 <div class="container">
     <div class="row">
         <div *ngFor="let poke of pokemon" class="card-column col-lg-3 col-sm-6 col-xs-12">
@@ -5,3 +31,5 @@
         </div>
     </div>
 </div>
+
+
