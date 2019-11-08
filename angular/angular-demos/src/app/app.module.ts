@@ -21,6 +21,8 @@ import { UsersComponent } from './components/users/users.component';
 import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
 import { SpringComponent } from './components/spring/spring.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,9 +48,12 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
