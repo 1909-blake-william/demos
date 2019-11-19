@@ -1,0 +1,35 @@
+package com.revature.web;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.revature.dao.UserDao;
+import com.revature.dao.UserDaoImpl;
+
+public class AuthDispatcher implements Dispatcher {
+	
+	private final UserDao userDao = UserDaoImpl.getInstance();
+	private final Logger logger = LogManager.getLogger(getClass());
+	
+	private static final Dispatcher instance = new AuthDispatcher();
+	
+	private AuthDispatcher() {
+		DispatcherChain.getInstance().register(instance);
+	}
+	
+
+	@Override
+	public boolean supports(HttpServletRequest request) {
+		return request.getRequestURI().equals("/ERSDemo/api/login") && 
+				request.getMethod().equals("POST"); 
+	}
+
+	@Override
+	public Object execute(HttpServletRequest request) {
+		logger.info("Made it inside AuthDispatcher#execute");
+		return null;
+	}
+
+}

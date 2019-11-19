@@ -1,0 +1,16 @@
+package com.revature.web;
+
+import java.sql.Connection;
+
+import javax.servlet.http.HttpServlet;
+
+import com.revature.util.ConnectionFactory;
+
+public class DispatcherServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	public DispatcherServlet() {
+		Connection conn = ConnectionFactory.getConnection();
+	}
+}

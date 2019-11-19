@@ -1,0 +1,62 @@
+package com.revature.web;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+public class DispatcherServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	private final ObjectMapper mapper = new ObjectMapper();
+
+	public DispatcherServlet() {
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("application/json");
+
+		Object response = Dispatcher.dispatch(req, resp);
+		if (response != null) {
+			// Write the JSON Response and return
+			resp.getOutputStream().write(mapper.writeValueAsBytes(response));
+		} else {
+			// REturn some 4XX error
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("application/json");
+
+		Object response = Dispatcher.dispatch(req, resp);
+		if (response != null) {
+			// Write the JSON Response and return
+			resp.getOutputStream().write(mapper.writeValueAsBytes(response));
+		} else {
+			// REturn some 4XX error
+		}
+	}
+
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		resp.setContentType("application/json");
+//
+//		Object response = Dispatcher.dispatch(req, resp);
+//		if (response != null) {
+//			// Write the JSON Response and return
+//			resp.getOutputStream().write(mapper.writeValueAsBytes(response));
+//		} else {
+//			// REturn some 4XX error
+//		}
+		doGet(req, resp);
+	}
+}

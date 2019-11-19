@@ -1,0 +1,40 @@
+package com.revature.util;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.util.Properties;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class ConnectionFactory {
+	
+	// Fail Fast
+	
+	private static Logger logger = LogManager.getLogger(ConnectionFactory.class);
+	private static Properties props = getJdbcProperties();
+
+	// Restrict Instantiation
+	private ConnectionFactory() {}
+	
+	public static Connection getConnection() {
+		
+	}
+	
+	
+	// All this method does is retrieve our particular properties needed to connect to DB
+	private static Properties getJdbcProperties() {
+		try {
+			Properties props = new Properties();
+			
+			// Load the values from src/main/resources/application.properties
+			// TL;DR - this method looks in src/main/resources for the file that you pass to getResourceAsStream()
+			props.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("application.properties"));
+			return props;
+		} catch (IOException e) {
+			logger.error("Unable to locate JDBC Properties at src/main/resources/application.properties");
+			logger.error("Stack Trace: ", e);
+			throw new RuntimeException("Check Logs; Failed to get connection properties");
+		}
+	}
+}

@@ -1,0 +1,36 @@
+package com.revature.dao;
+
+import com.revature.model.AppUser;
+
+public class UserDaoImpl implements UserDao {
+	
+	// Eager singleton
+//	private static final UserDao instance = new UserDaoImpl();
+	
+	
+	// Lazy Singleton
+	private static UserDao instance;
+	
+	// restrict instantiation
+	private UserDaoImpl() {}
+
+	@Override
+	public AppUser login(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	// Eager 
+//	public static UserDao getInstance() {
+//		return instance;
+//	}
+	
+	// Lazy
+	public static UserDao getInstance() {
+		if (instance == null) {
+			instance = new UserDaoImpl();
+		} 
+		return instance;
+	}
+}

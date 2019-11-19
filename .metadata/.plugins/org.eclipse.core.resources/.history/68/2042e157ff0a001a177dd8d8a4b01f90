@@ -1,0 +1,63 @@
+package com.revature.model;
+
+public class Fruit {
+
+	private String name;
+	private String tasty;
+
+	public Fruit() {
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTasty() {
+		return tasty;
+	}
+
+	public void setTasty(String tasty) {
+		this.tasty = tasty;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((tasty == null) ? 0 : tasty.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fruit other = (Fruit) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (tasty == null) {
+			if (other.tasty != null)
+				return false;
+		} else if (!tasty.equals(other.tasty))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Fruit [name=" + name + ", tasty=" + tasty + "]";
+	}
+
+}

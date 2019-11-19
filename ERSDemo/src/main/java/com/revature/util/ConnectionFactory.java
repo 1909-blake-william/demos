@@ -11,8 +11,6 @@ import org.apache.logging.log4j.Logger;
 
 public class ConnectionFactory {
 	
-	// Fail Fast
-	
 	private static Logger logger = LogManager.getLogger(ConnectionFactory.class);
 	private static Properties props = getJdbcProperties();
 	
@@ -20,6 +18,16 @@ public class ConnectionFactory {
 	private static final String URL = props.getProperty("jdbc.url");
 	private static final String USERNAME = props.getProperty("jdbc.username");
 	private static final String PASSWORD = props.getProperty("jdbc.password");
+	
+	// Fail Fast
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			logger.error("Failed to load JDBC Driver: {}", e);
+			System.exit(1);
+		}
+	}
 
 	// Restrict Instantiation
 	private ConnectionFactory() {}

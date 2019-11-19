@@ -1,0 +1,44 @@
+package com.revature.util;
+
+import java.io.IOException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+public class Json {
+	
+	// For readability/maintainability
+	public static final String CONTENT_TYPE = "application/json";
+	
+	private static final ObjectMapper mapper = new ObjectMapper();
+	
+	// invoke <clinit> (don't have to do this, I like the pretty print)
+	static {
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+	}
+	
+	// Restrict Instantiation
+	private Json() {}
+	
+	
+	public static byte[] write(Object o) {
+		try {
+			return mapper.writeValueAsBytes(o);
+		} catch (IOException e) {
+			Exceptions.logJsonMarshalException(e, o.getClass());
+			return null;
+		}
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+

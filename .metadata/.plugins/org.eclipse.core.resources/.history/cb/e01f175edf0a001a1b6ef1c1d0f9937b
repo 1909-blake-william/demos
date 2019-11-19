@@ -1,0 +1,26 @@
+Configuration:
+  Properties:
+    Property:
+      name: LOGS_PATH
+      value: ''
+  Appenders:
+    Console:
+      PatternLayout:
+        pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n'
+      name: Console
+      target: SYSTEM_OUT
+    File:
+      PatternLayout:
+        pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n'
+      name: File
+      fileName: ${LOGS_PATH}/issues.log
+      Filters:
+        ThresholdFilter:
+          level: warn
+  Loggers:
+    Root:
+      AppenderRef:
+        - ref: Console
+        - ref: File
+      level: DEBUG
+      

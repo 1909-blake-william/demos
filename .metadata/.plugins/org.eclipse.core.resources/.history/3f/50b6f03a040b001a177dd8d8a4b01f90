@@ -1,0 +1,37 @@
+package com.revature.web;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class DispatcherChain implements Dispatcher, Registry {
+	
+	private static final List<Dispatcher> dispatchers = new ArrayList<>();
+
+	@Override
+	public void register(Dispatcher dispatcher) {
+		dispatchers.add(dispatcher);
+	}
+
+	@Override
+	public boolean supports(HttpServletRequest request) {
+		for (Dispatcher d : dispatchers) {
+			if (d.supports(request)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public Object execute(HttpServletRequest request) {
+		for (Dispatcher d : dispatchers) {
+			if (d.supports(request)) {
+				return d.execute(request);
+			}
+		}
+		return null;
+	}
+
+}
