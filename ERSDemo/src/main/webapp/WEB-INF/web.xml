@@ -6,6 +6,8 @@
   <servlet>
   	<servlet-name>DispatcherServlet</servlet-name>
   	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
+  	<!-- Load this servlet as soon as Tomcat starts up -->
+  	<load-on-startup>1</load-on-startup>
   </servlet>
   
   <!-- Register URI's where DispatcherServlet will Listen -->
