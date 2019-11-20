@@ -1,3 +1,0 @@
-jdbc.ers.url=jdbc:oracle:thin:@william-pace-testdb.chueiwozbnfz.us-east-1.rds.amazonaws.com:1521:ORCL
-jdbc.ers.username=admin
-jdbc.ers.password=Password123!

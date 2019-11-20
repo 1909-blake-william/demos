@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-/home/william/revature/1909-sre/workspace/demos/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3309092587.index
-/FrontControllerExample/src/main/resources

@@ -1,9 +1,0 @@
-package com.revature.dao;
-
-import com.revature.model.AppUser;
-
-public interface UserDao {
-
-	AppUser login(String username, String password);
-	
-}

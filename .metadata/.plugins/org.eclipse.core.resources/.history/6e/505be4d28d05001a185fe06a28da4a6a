@@ -1,7 +1,0 @@
-package com.revature.web;
-
-public class Dispatcher {
-
-	// Restrict instantiation
-	private Dispatcher() {}
-}
