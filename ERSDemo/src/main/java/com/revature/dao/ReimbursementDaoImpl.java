@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.model.Reimbursement;
+import com.revature.model.ReimbursementForm;
 import com.revature.model.ReimbursementStatus;
 import com.revature.util.ConnectionFactory;
 import com.revature.util.Exceptions;
@@ -25,8 +26,8 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	private static final String FIND_ALL_BY_STATUS = FIND_ALL + " WHERE status = ?";
 	private static final String FIND_BY_ID = "SELECT * FROM reimbursements WHERE id = ?";
 	private static final String INSERT_REIMBURSEMENT = "INSERT INTO reimbursements "
-			+ "(amount, created_by, r_type, description, created_on, status) "
-			+ "VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, 0)";
+			+ "(id, amount, created_by, r_type, description, created_on, status) "
+			+ "VALUES (REIMB_SEQ.nextval, ?, ?, ?, ?, CURRENT_TIMESTAMP, 0)";
 	private static final String RESOLVE = "UPDATE reimbursements "
 			+ "SET status = ?, resolved_by = ?, resolved_on = ?"
 			+ " WHERE id = ?";
@@ -81,7 +82,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	}
 
 	@Override
-	public boolean create(Reimbursement reim) {
+	public boolean create(ReimbursementForm reim) {
 		try (Connection conn = ConnectionFactory.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement(INSERT_REIMBURSEMENT);
 			int index = 0;

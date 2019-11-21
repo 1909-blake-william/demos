@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class DispatcherChain implements Dispatcher, Registry {
 	
@@ -12,7 +13,8 @@ public class DispatcherChain implements Dispatcher, Registry {
 	
 	private DispatcherChain() {
 		this.dispatchers = new ArrayList<>();
-		this.register(AuthDispatcher.getInstance());
+		this.register(new AuthDispatcher());
+		this.register(new ReimbursementDispatcher());
 	}
 
 	@Override
@@ -31,13 +33,12 @@ public class DispatcherChain implements Dispatcher, Registry {
 	}
 
 	@Override
-	public Object execute(HttpServletRequest request) {
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		for (Dispatcher d : dispatchers) {
 			if (d.supports(request)) {
-				return d.execute(request);
+				d.execute(request, response);
 			}
 		}
-		return null;
 	}
 
 	public static DispatcherChain getInstance() {

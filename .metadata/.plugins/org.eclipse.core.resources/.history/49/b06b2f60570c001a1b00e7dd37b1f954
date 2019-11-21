@@ -1,0 +1,82 @@
+package com.revature.util;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class BasicConnectionPool implements ConnectionPool {
+	
+	private static final Queue<Connection> connections = new ConcurrentLinkedQueue<>();
+	
+	private static Logger logger = LogManager.getLogger(BasicConnectionPool.class);
+	private static Properties props = getJdbcProperties();
+	
+	// Magic Strings
+	private static final String URL = props.getProperty("jdbc.url");
+	private static final String USERNAME = props.getProperty("jdbc.username");
+	private static final String PASSWORD = props.getProperty("jdbc.password");
+	
+	// Magic Number
+	private static final int NUM_CONNECTIONS = 8;
+	
+	private static final ConnectionPool instance = new BasicConnectionPool();
+	
+	private BasicConnectionPool() {
+		// Populate Queue with connections
+		for (int i = 0; i < NUM_CONNECTIONS; i++) {
+			try {
+				connections.add(DriverManager.getConnection(URL, USERNAME, PASSWORD));
+			} catch (SQLException e) {
+				Exceptions.logSQLException(e);
+				System.exit(1);
+			}
+		}
+		logger.info("Connection Pool successfully configured");
+	}
+	
+	// Fail Fast
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			logger.error("Failed to load JDBC Driver: {}", e);
+			System.exit(1);
+		}
+	}
+	
+
+	@Override
+	public Connection getConnection() {
+		return connections.poll();
+	}
+
+	@Override
+	public boolean release(Connection conn) {
+		return connections.add(conn);
+	}
+	
+	
+	// All this method does is retrieve our particular properties needed to connect to DB
+	private static Properties getJdbcProperties() {
+		try {
+			Properties props = new Properties();
+			
+			// Load the values from src/main/resources/application.properties
+			// TL;DR - this method looks in src/main/resources for the file that you pass to getResourceAsStream()
+			props.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("application.properties"));
+			return props;
+		} catch (IOException | NullPointerException e) {
+			logger.error("Unable to locate JDBC Properties at src/main/resources/application.properties");
+			logger.error("Stack Trace: ", e);
+			throw new RuntimeException("Check Logs; Failed to get connection properties");
+		}
+	}
+
+}

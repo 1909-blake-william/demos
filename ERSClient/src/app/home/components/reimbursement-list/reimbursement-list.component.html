@@ -1,0 +1,3 @@
+<ul *ngFor="let reimbursement of reimbursements$ | async">
+  <app-reimbursement-detail [data]="reimbursement" ></app-reimbursement-detail>
+</ul>

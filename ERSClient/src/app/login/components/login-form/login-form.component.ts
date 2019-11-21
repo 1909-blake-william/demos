@@ -9,7 +9,7 @@ import { LoginForm } from '../../services/login.service';
 export class LoginFormComponent implements OnInit {
 
   // Used to tell any parent component that a particular event has occured
-  @Output('onFormSubmit') formSubmitEmitter: EventEmitter<LoginForm> = new EventEmitter<LoginForm>();
+  @Output('anythingIWant') formSubmitEmitter: EventEmitter<LoginForm> = new EventEmitter<LoginForm>();
 
   username: string;
   password: string;

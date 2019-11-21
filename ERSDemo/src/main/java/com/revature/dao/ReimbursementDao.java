@@ -3,6 +3,7 @@ package com.revature.dao;
 import java.util.List;
 
 import com.revature.model.Reimbursement;
+import com.revature.model.ReimbursementForm;
 import com.revature.model.ReimbursementStatus;
 
 public interface ReimbursementDao {
@@ -17,7 +18,7 @@ public interface ReimbursementDao {
 	
 	Reimbursement findOne(int id);
 	
-	boolean create(Reimbursement reim);
+	boolean create(ReimbursementForm reim);
 	
 	Reimbursement resolve(Reimbursement reim, ReimbursementStatus status);
 	
