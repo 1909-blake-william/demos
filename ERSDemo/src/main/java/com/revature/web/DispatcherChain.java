@@ -1,25 +1,19 @@
 package com.revature.web;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class DispatcherChain implements Dispatcher, Registry {
+public class DispatcherChain implements Dispatcher {
 	
 	private final List<Dispatcher> dispatchers;
 	private static final DispatcherChain instance = new DispatcherChain();
 	
 	private DispatcherChain() {
 		this.dispatchers = new ArrayList<>();
-		this.register(new AuthDispatcher());
-		this.register(new ReimbursementDispatcher());
-	}
-
-	@Override
-	public void register(Dispatcher dispatcher) {
-		dispatchers.add(dispatcher);
+		this.dispatchers.add(new AuthDispatcher());
+		this.dispatchers.add(new ReimbursementDispatcher());
 	}
 
 	@Override

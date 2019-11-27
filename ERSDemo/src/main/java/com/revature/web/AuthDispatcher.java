@@ -8,6 +8,7 @@ import com.revature.util.Json;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -21,8 +22,7 @@ public class AuthDispatcher implements Dispatcher {
 	
 	@Override
 	public boolean supports(HttpServletRequest request) {
-		return request.getRequestURI().equals("/ERSDemo/api/login") && 
-				request.getMethod().equals("POST"); 
+		return isForLogin(request) || isForUserInfo(request);
 	}
 
 	@Override
@@ -38,7 +38,9 @@ public class AuthDispatcher implements Dispatcher {
 			// Fira Code
 			if (info != null) {
 				response.setContentType(Json.CONTENT_TYPE);
-				request.getSession().setAttribute("currentUser", info);
+				Cookie cookie = new Cookie("currentUser", info.getUsername());
+				cookie.setPath("/ERSDemo/api");
+				response.addCookie(cookie);
 
 				response.getOutputStream().write(Json.write(info));
 				return;
@@ -49,6 +51,14 @@ public class AuthDispatcher implements Dispatcher {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private boolean isForLogin(HttpServletRequest request) {
+		return request.getMethod().equals("POST") && request.getRequestURI().equals("/ERSDemo/api/login");
+	}
+
+	private boolean isForUserInfo(HttpServletRequest request) {
+		return request.getMethod().equals("GET") && request.getRequestURI().equals("/ERSDemo/api/info");
 	}
 
 }

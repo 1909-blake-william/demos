@@ -1,6 +1,12 @@
-<div class="container">
-  <h2>{{ reimbursement?.description }}</h2>
-  <p>Status: {{ reimbursement?.status }}</p>
-  <p>Type: {{ reimbursement?.type }}</p>
-  <p>Amount: {{ reimbursement?.amount }}</p>
+<div class="card">
+  <div class="card-header">Reimbursement #{{ reimbursement?.id }} - {{ reimbursement?.status }}</div>
+  <div class="card-body">
+    <h6 class="title">Created By: {{ reimbursement?.createdBy }} on {{ reimbursement?.createdOn | date }}</h6>
+    <h6 class="subtitle">{{ reimbursement?.amount | currency:"USD" }} - {{ reimbursement?.type }}</h6>
+    <p class="card-text">{{ reimbursement?.description }}</p>
+  </div>
+  <div class="card-footer" *ngIf="currentUser?.authority === 'ROLE_MANAGER'">
+    <button class="btn btn-success">Approve</button>
+    <button class="btn btn-danger ml-auto">Reject</button>
+  </div>
 </div>

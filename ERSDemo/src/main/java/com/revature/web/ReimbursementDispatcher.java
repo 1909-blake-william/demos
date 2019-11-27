@@ -42,11 +42,11 @@ public class ReimbursementDispatcher implements Dispatcher {
 		} else if (isResolveReimbursement(request)) {
 			ReimbursementHandler.handleReimbursementResolution(request, response);
 		} else if (isGetOneReimbursement(request)) {
-			
+			ReimbursementHandler.handleGetOneReimbursement(request, response);
 		} else if (isGetReimbursementsByStatus(request)) {
-			
+			ReimbursementHandler.handleGetReimbursementsByStatus(request, response);
 		} else if (isGetReimbursementsByUsername(request)) {
-			
+			ReimbursementHandler.handleGetReimbursementByUsername(request, response);
 		}
 	}
 
